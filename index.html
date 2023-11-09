@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.lactame.com/lib/image-js/0.21.2/image.min.js"></script>
+  </head>
+
+  <body>
+
+    <h1>
+        Sloan Color Upload Guide
+    </h1>
+
+    <h3>
+        Step 1: determine color properties
+    </h3>
+    <p>
+        The name of your image file will determine how the color will look.
+    </p>
+    <div id="colorProperties">
+        
+        <div>
+        
+        <select name="colorCategory" id="colorCategory">
+            <option value="corian">corian</option>
+            <option value="corian-quartz">corian-quartz</option>
+            <option value="caesarstone">caesarstone</option>
+            <option value="silestone">silestone</option>
+            <option value="wilsonart">wilsonart</option>
+        </select>
+        <label for="colorCategory">Color Category</label>
+        
+        </div>
+
+        <div>
+            <input type="text" id="colorName" name="colorName" required minlength="1" size="15" />
+            <label for="colorName">Name (4 to 8 characters)</label>
+        </div>
+
+        <div>
+            <input type="number" id="patternSize" name="patternSize" min="1" max="10" step="1" value="5" />
+            <label for="patternSize">Pattern Size (1 - 10)</label>
+            
+        </div>
+
+        <div>
+            <input type="number" id="roughness" name="roughness" min="1" max="100" step="1" value="50"  />
+            <label for="roughness">Roughness % (0 - 100, higher = less reflections)</label>
+            
+        </div>
+    </div>
+
+    <h3>
+        Step 2: crop image texture to square
+    </h3>
+
+    <p>
+        A rectangular image will stretch or squash in odd ways. Make sure the ratio of your image is 1:1
+    </p>
+
+    <div id="drop-area">
+        <form class="my-form">
+          <p>Upload an image file to check dimensions</p>
+          <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
+          <label class="button" for="fileElem">Select Image</label>
+        </form>
+    <img
+        id="color"
+      />
+      <img id="result" />
+    </div>
+
+
+    
+    <h3>
+        Step 3: upload image file to threekit
+    </h3>
+
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
