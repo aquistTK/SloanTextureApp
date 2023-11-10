@@ -17,7 +17,7 @@ label {
 }
 
 html {
-  max-width: 70ch;
+  max-width: 85ch;
   padding: 3em 1em;
   margin: auto;
   line-height: 1.75;
@@ -98,6 +98,10 @@ p {
 img {
   margin: 10px;
   max-width: 60%;
+}
+
+.largeImg{
+  min-width: 100% !important;
 }
 
 .propertyString {

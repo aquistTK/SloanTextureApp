@@ -30,7 +30,7 @@ async function process() {
 
       resultText.innerHTML = "Use this cropped version:";
     }else{
-      originalText.innerHTML = "Image is square";
+      originalText.innerHTML = "&#9989; Image is square";
       resultText.innerHTML = "";
       document.getElementById('result').src = "";
     }
@@ -40,6 +40,9 @@ async function process() {
   }
 
 window.myNameValues = {"category": "corian", "name": "", "size": "5", "roughness":"50"};
+
+window.myNameValues["itemID"]="ITEM_ID";
+window.myNameValues["fileID"]="FILE_ID";
 
 function setProperty(item, propertyName){
   window.myNameValues[propertyName] = item.options[item.selectedIndex].value;

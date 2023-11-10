@@ -38,7 +38,7 @@
         Step 2: Rename Image File
     </h2>
     <p>
-        The name of your image will determine how the color will look. Use this template to help determine what it should be called.
+        The name of your image will determine how the color will look. Use this template to quickly generate a valid name.
     </p>
     <div id="colorProperties">
         
@@ -79,21 +79,58 @@
         <button id="clipboardBtn" onclick="copyNameStr()">Copy text</button>
     </div>
 
-    
-    
     <h2>
         Step 3: Upload Image To Threekit
     </h2>
 
     <p>Go to <a href="https://preview.threekit.com/o/sloan-dev/branches/main/assets/?parentFolderId=fa7c9f40-9cb4-45e6-a1a8-e70705f22508&tab=active" target="_blank" rel="noopener noreferrer">this link</a> and
         navigate to the sink_textures or cabinet_textures folder. Drag/drop your image into the asset list to start the upload.</p>
-
     <img src="uploadTexture.png" />
 
-    <script type="text/javascript" src="index.js"></script>
+
+    <h2>Step 4: Get Item ID</h2>
+
+    <p>
+        After the image is finished uploading, go to the 
+        <a href="https://preview.threekit.com/o/sloan-dev/branches/main/items?sort=&filters=%7B%7D&pageSize=50&page=0" target="_blank" rel="noopener noreferrer">Catalog</a>
+         and find your newly created item. It will have the color name in the title. Click on the name to see its page.
+    </p>
+        Copy the long string of characters in the page URL. This is your Item ID.
+    <p>
+
+    </p>
+    <img src="itemID.png" class="largeImg"/>
+
+    <input type="text" id="itemid" name="itemid" required minlength="1" size="50" placeholder="--paste item ID here--" onkeyup="setBasicProperty(this, 'itemID');" />
+
+    <h2>Step 5: Get file ID</h2>
+
+    <p>
+        Go to the <a href="https://preview.threekit.com/o/sloan-dev/branches/main/jobs?sort=-createdAt&filters=%7B%22type%22%3A%5B%22import%22%5D%7D&pageSize=50&page=0" target="_blank" rel="noopener noreferrer">Jobs</a>
+        page and click on the name of the most recent import. Then follow the task link.
+    </p>
+
+    <img src="jobs.png" class="largeImg"/>
+    <img src="task.png" class="largeImg"/>
+
+    <p>
+        Find the section at the top labelled 'fileId' and copy (no quotes).
+    </p>
+    <img src="fileID.png" class="largeImg"/>
+
+    <input type="text" id="fileid" name="fileid" required minlength="1" size="50" placeholder="--paste file ID here--" onkeyup="setBasicProperty(this, 'fileID');" />
 
     <h2>
-        Step 4: Update Material Data Tables
+        Step 6: Update Material Data Tables
     </h2>
+
+    <p>Depending on your material type, visit the
+        <a href="https://preview.threekit.com/o/sloan-dev/branches/main/datatables/388f3edc-a94f-4691-8340-9a7641d1bca5?sort=&filters=%7B%7D&pageSize=50&page=0" target="_blank" rel="noopener noreferrer">Sink Colors</a>
+        or
+        <a href="https://preview.threekit.com/o/sloan-dev/branches/main/datatables/c6213ea8-4840-4092-a18e-1a1aea97320a?sort=&filters=%7B%7D&pageSize=50&page=0" target="_blank" rel="noopener noreferrer">Laminate Colors</a>
+        datatable. Download the most up-to-date file and add a new row (using your preferred spreadsheet editor). Fill in the columns with this data:
+    </p>
+
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
