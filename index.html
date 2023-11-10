@@ -11,52 +11,7 @@
     </h1>
 
     <h2>
-        Step 1: Color Image Name
-    </h2>
-    <p>
-        The name of your image file will determine how the color will look.
-    </p>
-    <div id="colorProperties">
-        
-        <div>
-        
-        <select name="colorCategory" id="colorCategory" onchange="setProperty(this, 'category');">
-            <option value="corian">corian</option>
-            <option value="corian-quartz">corian-quartz</option>
-            <option value="caesarstone">caesarstone</option>
-            <option value="silestone">silestone</option>
-            <option value="wilsonart">wilsonart</option>
-        </select>
-        <label for="colorCategory">Color Category</label>
-        
-        </div>
-
-        <div>
-            <input type="text" id="colorName" name="colorName" required minlength="1" size="15" value="" onkeyup="setBasicProperty(this, 'name');" />
-            <label for="colorName">Name</label>
-        </div>
-
-        <div>
-            <input type="number" id="patternSize" name="patternSize" min="1" max="10" step="1" value="5" />
-            <label for="patternSize">Pattern Size (1 - 10)</label>
-            
-        </div>
-
-        <div>
-            <input type="number" id="roughness" name="roughness" min="1" max="100" step="1" value="50"  />
-            <label for="roughness">Roughness % (0 - 100, higher = less reflections)</label>
-            
-        </div>
-
-    </div>
-
-    <div><h4>Image Name:</h4> 
-        <div class="propertyString" id="propertyString">enter color name</div>
-        <button id="clipboardBtn" onclick="copyNameStr()">Copy text</button>
-    </div>
-
-    <h2>
-        Step 2: crop image texture to square
+        Step 1: Crop Image To Square
     </h2>
 
     <p>
@@ -75,17 +30,70 @@
         id="color"
       />
       <div id="resultImageLabel"></div>
-      <img id="result" />
+      <img id="result" name="newTexture" />
     </div>
+
+
+    <h2>
+        Step 2: Rename Image File
+    </h2>
+    <p>
+        The name of your image will determine how the color will look. Use this template to help determine what it should be called.
+    </p>
+    <div id="colorProperties">
+        
+        <div>
+            <input type="text" id="colorName" name="colorName" required minlength="1" size="15" value="" onkeyup="setBasicProperty(this, 'name');" />
+            <label for="colorName">Name (spaces allowed)</label>
+        </div>
+
+        <div>
+        <select name="colorCategory" id="colorCategory" onchange="setProperty(this, 'category');">
+            <option value="Corian">Corian</option>
+            <option value="Corian-quartz">Corian-Quartz</option>
+            <option value="Caesarstone">Caesarstone</option>
+            <option value="Silestone">Silestone</option>
+            <option value="wilsonart">Wilsonart</option>
+        </select>
+        <label for="colorCategory">Category</label>
+        </div>
+
+
+
+        <div>
+            <input type="number" id="patternSize" name="patternSize" min="1" max="10" step="1" value="5" onchange="setBasicProperty(this, 'size');"/>
+            <label for="patternSize">Pattern Size (1 - 10)</label>
+            
+        </div>
+
+        <div>
+            <input type="number" id="roughness" name="roughness" min="1" max="100" step="1" value="50" onchange="setBasicProperty(this, 'roughness');" />
+            <label for="roughness">Roughness % (0 - 100)</label>
+            
+        </div>
+
+    </div>
+
+    <div><h4>File Name:</h4> 
+        <div class="propertyString" id="propertyString">category_name_size_roughness</div>
+        <button id="clipboardBtn" onclick="copyNameStr()">Copy text</button>
+    </div>
+
+    
     
     <h2>
-        Step 3: upload image file to threekit
+        Step 3: Upload Image To Threekit
     </h2>
 
-    <p>Go to <a href="https://preview.threekit.com/o/sloan-dev/branches/main/assets/?parentFolderId=fa7c9f40-9cb4-45e6-a1a8-e70705f22508&tab=active" target="_blank" rel="noopener noreferrer">this link</a> and drag/drop your image into one of the folders.</p>
+    <p>Go to <a href="https://preview.threekit.com/o/sloan-dev/branches/main/assets/?parentFolderId=fa7c9f40-9cb4-45e6-a1a8-e70705f22508&tab=active" target="_blank" rel="noopener noreferrer">this link</a> and
+        navigate to the sink_textures or cabinet_textures folder. Drag/drop your image into the asset list to start the upload.</p>
 
     <img src="uploadTexture.png" />
 
     <script type="text/javascript" src="index.js"></script>
+
+    <h2>
+        Step 4: Update Material Data Tables
+    </h2>
   </body>
 </html>

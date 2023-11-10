@@ -22,9 +22,10 @@ async function process() {
         transformY = Math.floor((l * .5) - (shortest * .5));
       }
 
-      originalText.innerHTML = "Not square";
+      originalText.innerHTML = "&#9940; Not square";
 
       var result = image.crop({width:shortest, height:shortest, x:transformX, y:transformY});
+      
       document.getElementById('result').src = result.toDataURL();
 
       resultText.innerHTML = "Use this cropped version:";
