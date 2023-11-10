@@ -83,3 +83,11 @@ body {
     margin: 10px;
     max-width: 60%;
   }
+
+  .propertyString{
+    background-color:#1d1d1d;
+    color: white;
+    margin: 0.8rem 0;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+  }

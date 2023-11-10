@@ -10,9 +10,9 @@
         Sloan Color Upload Guide
     </h1>
 
-    <h3>
-        Step 1: determine color properties
-    </h3>
+    <h2>
+        Step 1: Color Image Name
+    </h2>
     <p>
         The name of your image file will determine how the color will look.
     </p>
@@ -20,7 +20,7 @@
         
         <div>
         
-        <select name="colorCategory" id="colorCategory">
+        <select name="colorCategory" id="colorCategory" onchange="setProperty(this, 'category');">
             <option value="corian">corian</option>
             <option value="corian-quartz">corian-quartz</option>
             <option value="caesarstone">caesarstone</option>
@@ -32,8 +32,8 @@
         </div>
 
         <div>
-            <input type="text" id="colorName" name="colorName" required minlength="1" size="15" />
-            <label for="colorName">Name (4 to 8 characters)</label>
+            <input type="text" id="colorName" name="colorName" required minlength="1" size="15" value="" onkeyup="setBasicProperty(this, 'name');" />
+            <label for="colorName">Name</label>
         </div>
 
         <div>
@@ -47,14 +47,22 @@
             <label for="roughness">Roughness % (0 - 100, higher = less reflections)</label>
             
         </div>
+
     </div>
 
-    <h3>
+    <div><br/> Image Name:
+        <div class="propertyString" id="propertyString">
+            enter color name
+        </div>
+        <button id="clipboardBtn" onclick="copyNameStr()">Copy text</button>
+    </div>
+
+    <h2>
         Step 2: crop image texture to square
-    </h3>
+    </h2>
 
     <p>
-        A rectangular image will stretch or squash in odd ways. Make sure the ratio of your image is 1:1
+        A rectangular image will stretch in odd ways. Make sure the ratio of your image is 1:1
     </p>
 
     <div id="drop-area">
@@ -63,17 +71,20 @@
           <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
           <label class="button" for="fileElem">Select Image</label>
         </form>
+    
+    <div id="originalImageLabel"></div>
     <img
         id="color"
       />
+      <div id="resultImageLabel"></div>
       <img id="result" />
     </div>
 
 
     
-    <h3>
+    <h2>
         Step 3: upload image file to threekit
-    </h3>
+    </h2>
 
     <script type="text/javascript" src="index.js"></script>
   </body>
