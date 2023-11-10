@@ -60,7 +60,8 @@ function updateName(){
 
 
 function copyNameStr() {
-  navigator.clipboard.writeText(`${nameVal["category"]}_${nameVal["name"]}_${nameVal["size"]}_${nameVal["roughness"]}`);
+  var nameDisplay = document.getElementById('propertyString');
+  navigator.clipboard.writeText(nameDisplay.innerHTML);
 }
 
 //   documentation: https://github.com/image-js/image-js#examples-in-the-browser
