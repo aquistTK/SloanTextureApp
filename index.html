@@ -50,10 +50,10 @@
         <div>
         <select name="colorCategory" id="colorCategory" onchange="setProperty(this, 'category');">
             <option value="Corian">Corian</option>
-            <option value="Corian-quartz">Corian-Quartz</option>
+            <option value="Corian Quartz">Corian Quartz</option>
             <option value="Caesarstone">Caesarstone</option>
             <option value="Silestone">Silestone</option>
-            <option value="wilsonart">Wilsonart</option>
+            <option value="Wilsonart">Wilsonart</option>
         </select>
         <label for="colorCategory">Category</label>
         </div>
@@ -124,6 +124,8 @@
         Step 6: Update Material Data Tables
     </h2>
 
+    
+
     <p>Depending on your material type, visit the
         <a href="https://preview.threekit.com/o/sloan-dev/branches/main/datatables/388f3edc-a94f-4691-8340-9a7641d1bca5?sort=&filters=%7B%7D&pageSize=50&page=0" target="_blank" rel="noopener noreferrer">Sink Colors</a>
         or
@@ -131,6 +133,24 @@
         datatable. Download the most up-to-date file and add a new row (using your preferred spreadsheet editor). Fill in the columns with this data:
     </p>
 
+    <h4>Sink Materials:</h4>
+
+    <!-- <button id="copy-table-button"  onclick="copySinkToClipbard();">  Copy Values </button> -->
+
+
+    <table id="sinkTable" cellpadding="2" cellspacing="2"></table>
+
+
+
+    <h4>Cabinet Materials:</h4>
+
+    <table id="cabinetTable" cellpadding="2" cellspacing="2" ></table>
+
+    <p></p>
+    <p>
+        Once you've added these to the CSV file, go to back to the table's page and use the update button to re-upload it. If you have a large batch of materials, it's a good idea to add more than one change to the CSV before re-uploading it.</p>
     <script type="text/javascript" src="index.js"></script>
   </body>
+
+
 </html>
