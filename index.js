@@ -100,7 +100,7 @@ function getSinkTable(){
     ["daAttribute", "ZZ_MATERIAL_COLOR"],
     ["daValue (color name, uppercase)", `${window.myNameValues["name"].toUpperCase()}`],
     ["imageUrl (File ID before /content)", `https://preview.threekit.com/api/files/${window.myNameValues["fileID"]}/content`],
-    ["materialTag (color category)", `${window.myNameValues["category"]}`],
+    ["materialTag (lower-case, dash-seperated color category)", `${window.myNameValues["category"].replace(/\s+/g, '-').toLowerCase()}`],
     ["priceTag(between 1 and 5 dollar signs)", "$$$$$"],
     ["colorTag", "(Use one of the existing options)"],
     ["catalogId (item ID)", `${window.myNameValues["itemID"]}`],
